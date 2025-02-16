@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .header {
+            background-color: #10B981;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .back-button {
+            background-color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .semester {
+            padding: 1rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .course-list {
+            background: white;
+            margin: 0 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1rem;
+        }
+
+        .course-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-item:last-child {
+            border-bottom: none;
+        }
+
+        .course-name {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-td {
+            background-color: #FEF3C7;
+            color: #92400E;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+
+        .grade {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+
+        .grade-pass {
+            background-color: #D1FAE5;
+            color: #059669;
+        }
+
+        .grade-fail {
+            background-color: #FEE2E2;
+            color: #EF4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+       <a href="index.html"> <button class="back-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7" stroke="black"></path>
+        </svg>
+    </button></a>
+        <h1 class="title">Assessment</h1>
+    </div>
+
+    <div class="semester">Semestre 3</div>
+
+    <div class="course-list" id="courseList"></div>
+
+    <script>
+        const courses = [
+            { name: "Principes De Marketing 1", type: "TD", grade: 15.5 },
+            { name: "Introduction Au Management", type: "TD", grade: 12.5 },
+            { name: "Méthodologie", type: "TD", grade: 13.5 },
+            { name: "Comptabilité De Gestion", type: "TD", grade: 7.5 },
+            { name: "Statistique 3", type: "TD", grade: 10 },
+            { name: "Mathématiques Financières", type: "TD", grade: 8 },
+            { name: "Macroéconomie 1", type: "TD", grade: 10 },
+            { name: "Informatique 2", type: "TP", grade: 16 }
+        ];
+
+        function createCourseElement(course) {
+            const div = document.createElement('div');
+            div.className = 'course-item';
+            div.innerHTML = `
+                <div>
+                    <div class="course-name">${course.name}</div>
+                    <span class="badge-td">${course.type}</span>
+                </div>
+                <div class="grade ${course.grade >= 10 ? 'grade-pass' : 'grade-fail'}">
+                    Grade : ${course.grade}
+                </div>
+            `;
+            return div;
+        }
+
+        const courseList = document.getElementById('courseList');
+        courses.forEach(course => {
+            courseList.appendChild(createCourseElement(course));
+        });
+    </script>
+</body>
+</html>

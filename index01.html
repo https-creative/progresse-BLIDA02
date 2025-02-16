@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic transcripts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #059669;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            color: white;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .back-button {
+            background-color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .year-selector {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            padding: 0.5rem 0;
+        }
+
+        .year-btn {
+            background: #4F46E5;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .year-btn.inactive {
+            background: #E0E7FF;
+            color: #4F46E5;
+        }
+
+        .transcript-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            margin-bottom: 1rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .summary {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .summary-item {
+            background: #eafee2;
+            color: #059669;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th {
+            text-align: left;
+            padding: 0.75rem;
+            background: #f9fafb;
+            font-weight: 500;
+        }
+
+        .table td {
+            padding: 0.75rem;
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .grade {
+            font-weight: 500;
+        }
+
+        .grade-pass {
+            color: #059669;
+        }
+
+        .grade-fail {
+            color: #EF4444;
+        }
+        .unit-row0 {
+            background: #96050518;
+        }
+        .unit-row {
+            background: #05966818;
+        }
+
+        .unit-row-success {
+            background: #f0fdf4;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><button class="back-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" stroke="black"></path>
+            </svg>
+        </button></a>
+        <h1>Academic transcripts</h1>
+    </div>
+
+    <div class="year-selector">
+        <button class="year-btn">2024/2025</button>
+        <button class="year-btn inactive">2023/2024</button>
+        <button class="year-btn inactive">2022/2023</button>
+    </div>
+
+    <div class="transcript-card">
+        <div class="card-header">
+            <h2>Licence 2ème Année</h2>
+            <div class="summary">
+                <div class="summary-item">Average Semestre 3 : 10.43</div>
+                <div class="summary-item">Credit : 30 </div>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Credit</th>
+                    <th>Coef</th>
+                    <th>Average</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Méthodologie</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td class="grade grade-fail">09</td>
+                </tr>
+                <tr class="unit-row0">
+                    <td>(U.E.D) F00D00001S3</td>
+                    <td colspan="2">0/2</td>
+                    <td class="grade grade-fail">09</td>
+                </tr>
+                <tr>
+                    <td>Statistique 3</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td class="grade grade-fail">7</td>
+                </tr>
+                <tr>
+                    <td>Economie monétaire</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td class="grade grade-pass">12</td>
+                </tr>
+                <tr>
+                    <td>Mathématiques financières</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td class="grade grade-pass">13.5</td>
+                </tr>
+                <tr class="unit-row">
+                    <td>(U.E.M) F00M00001S3</td>
+                    <td colspan="2">8/9</td>
+                    <td class="grade grade-pass">12.64</td>
+                </tr>
+                <tr>
+                    <td>Introduction au management</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td class="grade grade-fail">8</td>
+                </tr>
+                <tr>
+                    <td>Comptabilité de gestion</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td class="grade grade-pass">10</td>
+                </tr>
+                <tr>
+                    <td>Macroéconomie 1</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td class="grade grade-pass">15</td>
+                </tr>
+                <tr>
+                    <td>Principes de marketing 1</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td class="grade grade-fail">6</td>
+                </tr>
+                <tr class="unit-row">
+                    <td>(U.E.F) F00F00001S3</td>
+                    <td colspan="2">16/18</td>
+                    <td class="grade grade-pass">13.04</td>
+                </tr>
+                <tr>
+                    <td>Informatique 2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td class="grade grade-pass">16</td>
+                </tr>
+                <tr class="unit-row unit-row-success">
+                    <td>(U.E.T) F00T00001S3</td>
+                    <td colspan="2">1/1</td>
+                    <td class="grade grade-pass">16</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
